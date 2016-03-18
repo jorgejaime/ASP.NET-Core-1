@@ -1,0 +1,54 @@
+1. cree un directorio
+
+mkdir dnx_ejemplo
+cd dnx_ejemplo
+
+
+2. Cree el archivo project.json y copie:
+
+{
+  "version": "1.0.0-*",
+  "description": "Silly demo project",
+  "commands": {
+    "runme": "dnx_demo"
+  },
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": {
+      "dependencies": {
+        "System.Console": "4.0.0-beta-22816",
+        "Microsoft.CSharp": "4.0.0-beta-22816"
+      }
+    }
+  }
+}
+
+
+
+3. Cree el un archivo Program.cs y copie:
+
+using System;
+namespace dnx_demo
+{
+    public class Program
+    {
+        public void Main(string[] args)
+        {
+            Console.WriteLine("No estoy usando Visual Studio");
+            Console.Read();
+        }
+    }
+}
+
+
+
+4. dnvm install latest
+
+
+5. dnu restore
+
+
+6. dnx run
+
+
+7.dnvm use default

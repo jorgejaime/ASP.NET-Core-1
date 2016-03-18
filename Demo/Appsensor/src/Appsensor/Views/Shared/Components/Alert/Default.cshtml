@@ -1,0 +1,15 @@
+﻿@model List<string>
+<h4><span class="label label-danger">Sensor de temperatura<span class="badge">2</span></span></h4>
+<div>
+    
+    
+        @foreach (var item in Model)
+        {
+            <div class="alert alert-danger" role="alert">
+                @item
+            </div>
+
+        }
+    
+
+</div>

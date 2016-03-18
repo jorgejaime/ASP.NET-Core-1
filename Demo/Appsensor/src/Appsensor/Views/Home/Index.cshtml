@@ -1,0 +1,66 @@
+﻿@model Appsensor.Models.Dashboard
+
+<h2>Sensor de temeratura.</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3><span class="label label-info">Sensor de temperatura</span></h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>
+                                <i class="fa fa-star"></i> Fheca
+                            </td>
+                            <td>
+                                <i class="fa fa-twitch"> Valor</i>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Temperaturas)
+                        {
+                            <tr>
+                                <td>
+                                    @item.DateSample.ToLongTimeString()
+                                </td>
+                                <td>
+                                    @item.TemperatureValue.ToString("N2")
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        @Component.Invoke("Alert")
+    </div>
+    <div class="col-md-6">
+        <form class="form-inline" asp-controller="Home" asp-action="EnviarMensaje" method="post">
+            <div class="form-group">
+                <label asp-for="Mensaje"></label>
+                <input type="text" class="form-control" id="" placeholder="mensaje" asp-for="Mensaje">
+            </div>
+            
+            <button type="submit" class="btn btn-default">Enviar mesaje</button>
+        </form>
+        <div>@Model.Mensaje</div>
+    </div>
+
+</div>

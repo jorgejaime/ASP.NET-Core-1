@@ -1,0 +1,72 @@
+Install or Upgrade DNVM Using CMD:
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "&{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
+
+
+Run DNVM without Arguments
+dnvm
+
+
+List Available DNX Runtimes Using DNVM List:
+dnvm list
+
+DNVM Install Latest:
+dnvm install latest
+
+
+DNVM Install Latest for Specific Runtime/Architecture:
+dnvm install latest -r coreclr -arch x64
+
+
+
+Upgrade .NET Framework CLR to Latest Version Using DNVM Upgrade:
+dnvm upgrade -r clr -arch x64
+
+
+Upgrading to Latest Unstable (development) Runtime Releases
+dnvm upgrade -u
+
+
+Select or Switch to a Different Runtime for the Current Process:
+dnvm use 1.0.0-beta4-11566 -r coreclr -arch x64
+
+
+Select or Switch to a New DNX Runtime Default for User PATH:
+dnvm use 1.0.0-beta4-11566 -r coreclr -arch x64 -p
+
+
+Remove DNX Runtime References from Process PATH Variable:
+dnvm use none
+
+
+Remove DNX Runtime References from User PATH Variable:
+dnvm use none -p
+
+
+Assign an Alias to a DNX Runtime:
+dnvm alias core-64-latest 1.0.0-beta4-11566 -r coreclr -arch x64
+
+
+Select or Switch to a new DNX Runtime Using an Alias:
+dnvm use core-64-latest
+
+
+
+Run app:
+dnx . runme
+dnx . run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
